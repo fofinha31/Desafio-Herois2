@@ -1,51 +1,49 @@
-// Solicita o nome e a quantidade de vitorias do herói e derrotas.
-let vitorias = 100;
-let derrotas = 20;
+class Hero
+ {
+    constructor(nome, idade, tipo)
+    {
+        this.nome = nome;
+        this.idade = idade;
+        this.tipo = tipo;
+    }
 
-//criado a funcao de vitorias e derrotas do jogador e o nível, e o saldo foi feito o resultado.
-function saldo( vitorias , derrotas)
-{
-  let resultado = vitorias - derrotass;
-   return resultado;
+    atacar() 
+    {
+        let ataque;
+        
+        switch (this.tipo) 
+        
+        {
+            case "mago":
+                ataque = "usou magia";
+                break;
+            case "guerreiro":
+                ataque = "usou espada";
+                break;
+            case "monge":
+                ataque = "usou artes marciais";
+                break;
+            case "ninja":
+                ataque = "usou shuriken";
+                break;
+            default:
+                ataque = "usou um ataque indefinido";
+        }
+     // mensagem final!
+        const mensagem = `o ${this.tipo} atacou usando ${ataque}`;
+        console.log(mensagem);
+    }
 }
 
-function calcularnivel(vitorias , derrotas)
-{
-   let nivel = "";
+// Herois especificados
+const hero1 = new Hero("Gandalf", 1500, "mago");
+hero1.atacar();
 
-   if (saldo (vitorias , derrotas) <= 10) 
-{
-    nivel = "Ferro";
-} 
-else if (saldo (vitorias , derrotas) <= 20) 
-{
-    nivel = "Bronze";
-} 
-else if (saldo (vitorias , derrotas) <= 50)
- {
-    nivel = "Prata";
-} 
-else if (saldo (vitorias , derrotas) <= 80) 
-{
-    nivel = "Ouro";
-} 
-else if (saldo (vitorias , derrotas) <= 90) 
-{
-    nivel = "Diamanete";
-} 
-else if (saldo (vitorias , derrotas) <= 100) 
-{
-    nivel = "Lendario";
- } 
-   else 
- {
-    nivel = "Imortal";
- }
+const hero2 = new Hero("Aragorn", 35, "guerreiro");
+hero2.atacar();
 
-    return nivel;
+const hero3 = new Hero("Bruce Lee", 32, "monge");
+hero3.atacar();
 
-}
-
-
-// Exibe a mensagem final
-console.log(" O Herói tem de saldo de " + (saldo (vitorias , derrotas))+ " está no nível de " + (calcularnivel(vitorias , derrotas) ));
+const hero4 = new Hero("Hanzo", 28, "ninja");
+hero4.atacar();
