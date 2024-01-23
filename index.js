@@ -5,7 +5,7 @@ let derrotas = 20;
 //criado a funcao de vitorias e derrotas do jogador e o nível, e o saldo foi feito o resultado.
 function saldo( vitorias , derrotas)
 {
-  let resultado = vitorias - derrotas;
+  let resultado = vitorias - derrotass;
    return resultado;
 }
 
